@@ -1,0 +1,25 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+
+    ViewBag.SubTitle = "子標題";
+
+    ViewData["SubTitle"] = "複寫-子標題";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+</div>
+
+<p>
+    SubTitle:@ViewData["SubTitle"]
+</p>
+
+@using (Html.BeginForm())
+{
+    <p>User ID:</p><p><input id="txtUserID" name="txtUserID" type="text" /></p><br />
+    <p>Title:</p><p><input id="txtTitle" name="txtTitle" type="text" /></p><br/>
+    <input id="btnSubmit" type="submit" value="送出" /><br />
+    <p><label>輸入的是：@ViewBag.UserID</label></p><br />
+    <p><label>職稱是：@ViewBag.MyTitle</label></p><br />
+}
