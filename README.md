@@ -1,1 +1,1 @@
-# .NET 5 Authorized �򥻽d��
+﻿# .NET 5 Authorized 基本範例
