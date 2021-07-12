@@ -3,7 +3,12 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebCore5Lab1", "WebCore5Lab1\WebCore5Lab1.csproj", "{6CD6AEF7-5038-4AC8-A919-F57DB033BC2F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "WebCore5Lab1", "WebCore5Lab1\WebCore5Lab1.csproj", "{6CD6AEF7-5038-4AC8-A919-F57DB033BC2F}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{4FAF7A34-4A6D-4537-9972-AA889BE05649}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
