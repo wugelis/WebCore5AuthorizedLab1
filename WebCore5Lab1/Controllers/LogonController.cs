@@ -36,7 +36,7 @@ namespace WebCore5Lab1.Controllers
                         new Claim(ClaimTypes.Name, account.Username),
                         new Claim(ClaimTypes.Role, "Admin")
                     },
-                    "Custom Scheme"
+                    CookieAuthenticationDefaults.AuthenticationScheme
                 ));
 
                 await _httpContextAccessor.HttpContext.SignInAsync(principal);

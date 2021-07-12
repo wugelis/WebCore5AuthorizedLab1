@@ -1,3 +1,4 @@
+using Microsoft.AspNetCore.Authentication.Cookies;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -32,25 +33,22 @@ namespace WebCore5Lab1
             services.AddAuthentication(options =>
             {
                 //options.DefaultAuthenticateScheme = "Custom Scheme";
-                //options.DefaultChallengeScheme = "Custom Scheme";
-                options.DefaultScheme = "Custom Scheme";
+                //options.DefaultChallengeScheme = CookieAuthenticationDefaults.AuthenticationScheme;
+                options.DefaultScheme = CookieAuthenticationDefaults.AuthenticationScheme;
 
-            }).AddCustomAuth(configureOps =>
-            {
-                //
             }).AddCookie(options =>
             {
                 options.LoginPath = new PathString("/Logon/Login");
                 options.ExpireTimeSpan = TimeSpan.FromMinutes(3);
             });
 
-            services.AddAuthorization(configure =>
-            {
-                configure.AddPolicy("AdminOnly", policy => 
-                {
-                    policy.RequireClaim("https://localhost:44303/Logon/Login");
-                });
-            });
+            //services.AddAuthorization(configure =>
+            //{
+            //    configure.AddPolicy("AdminOnly", policy => 
+            //    {
+            //        policy.RequireClaim("https://localhost:44303/Logon/Login");
+            //    });
+            //});
 
             services.AddHttpContextAccessor();
 
@@ -78,6 +76,7 @@ namespace WebCore5Lab1
 
             app.UseRouting();
 
+            app.UseAuthentication();
             app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
